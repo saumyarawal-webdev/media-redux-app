@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { fetchPhotos, fetchVideos, fetchGIF } from "../api/mediaApi.js";
 import ResultCard from "./ResultCard.jsx";
 import {
-  setQuery,
   setLoading,
   setError,
   setResults,
@@ -60,7 +59,7 @@ function ResultGrid() {
       }
     };
     getData();
-  }, [query, activeTab]);
+  }, [query, activeTab, dispatch]);
   if (error) return <h1>Error</h1>;
   if (loading) return <h1>Loading</h1>;
   return (
