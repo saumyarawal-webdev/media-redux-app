@@ -1,8 +1,9 @@
-const { configureStore } = require("@reduxjs/toolkit");
-import searchReducer from './features/searchSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import searchReducer from "./features/searchSlice";
 const store = configureStore({
-    reducer:{
-        search:searchReducer,
+  reducer: {
+    search: searchReducer,
+  },
+});
 
-    }
-})
+export default store;
