@@ -28,7 +28,7 @@ function ResultGrid() {
             src: item.urls.full,
             url: item.links.html,
           }));
-          console.log(data);
+          
         }
         if (activeTab == "Videos") {
           data = await fetchVideos(query);
@@ -40,7 +40,7 @@ function ResultGrid() {
             src: item.video_files[0].link,
             url: item.url,
           }));
-          console.log(data);
+         
         }
         if (activeTab == "GIF") {
           data = await fetchGIF(query);

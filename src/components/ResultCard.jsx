@@ -1,9 +1,18 @@
 import React from "react";
 
+
 const ResultCard = ({ item }) => {
+  const addToCollection = (item) =>{
+    
+    const oldData = JSON.parse(localStorage.getItem('collection')) || [];
+    
+    const newData = [...oldData,item]
+
+    localStorage.setItem('collection',JSON.stringify(newData))
+  }
   return (
     <div className="relative w-[23vw] h-80 bg-white rounded-xl overflow-hidden">
-      <a href={item.url} target="_blank" className="h-full">
+      <a href={item.url} target="_blank" className="h-full !z-3">
         {item.type == "photo" ? (
           <img
             className="h-full w-full object-cover object-center"
@@ -33,13 +42,14 @@ const ResultCard = ({ item }) => {
         )}
       </a>
       <div
-        className="flex justify-between gap-3 items-center w-full py-5 px-4 text-white absolute bottom-0"
+        className="flex justify-between gap-3 items-center w-full py-5 px-4 text-white absolute bottom-0 !z-20"
         id="bottom"
       >
         <h2 className="text-lg font-semibold capitalize h-20 overflow-hidden">
           {item.title}
         </h2>
-        <button className="bg-red-600 text-white rounded px-3 py-2 font-medium cursor-pointer active:scale-95">
+        <button className="bg-red-600 text-white rounded px-3 py-2 font-medium cursor-pointer active:scale-95 z-10" onClick={()=>{
+          addToCollection(item)}}>
           Save
         </button>
       </div>
