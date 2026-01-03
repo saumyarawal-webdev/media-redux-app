@@ -1,13 +1,6 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import {addCollection} from "../redux/features/collectionSlice"
-const ResultCard = ({ item }) => {
-  const dispatch = useDispatch()
-  const addToCollection = (item) =>{
-    
-    
-    dispatch(addCollection(item))
-  }
+import React from 'react'
+
+function CollectionCard({item}) {
   return (
     <div className="relative w-[23vw] h-80 bg-white rounded-xl overflow-hidden">
       <a href={item.url} target="_blank" className="h-full !z-3">
@@ -47,12 +40,12 @@ const ResultCard = ({ item }) => {
           {item.title}
         </h2>
         <button className="bg-red-600 text-white rounded px-3 py-2 font-medium cursor-pointer active:scale-95 z-10" onClick={()=>{
-          addToCollection(item)}}>
-          Save
+          console.log("removed")}}>
+          Remove
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ResultCard;
+export default CollectionCard
