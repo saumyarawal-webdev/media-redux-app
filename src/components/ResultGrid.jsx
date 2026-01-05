@@ -67,9 +67,9 @@ function ResultGrid() {
       {results.map((item, idx) => {
         return (
           <div key={idx}>
-            <a href={item.url} target="_blank">
+           
               <ResultCard item={item} />
-            </a>
+           
           </div>
         );
       })}

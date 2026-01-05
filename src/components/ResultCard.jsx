@@ -40,13 +40,13 @@ const ResultCard = ({ item }) => {
         )}
       </a>
       <div
-        className="flex justify-between gap-3 items-center w-full py-5 px-4 text-white absolute bottom-0 !z-20"
+        className="flex justify-between gap-3 items-center w-full py-5 px-4 text-white absolute bottom-0"
         id="bottom"
       >
         <h2 className="text-lg font-semibold capitalize h-20 overflow-hidden">
           {item.title}
         </h2>
-        <button className="bg-red-600 text-white rounded px-3 py-2 font-medium cursor-pointer active:scale-95 z-10" onClick={()=>{
+        <button className="bg-red-600 text-white rounded px-3 py-2 font-medium cursor-pointer active:scale-95 " onClick={()=>{
           addToCollection(item)}}>
           Save
         </button>

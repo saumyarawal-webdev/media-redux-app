@@ -1,6 +1,11 @@
 
-
+import {useDispatch} from 'react-redux'
+import {removeCollection} from '../redux/features/collectionSlice'
 function CollectionCard({item}) {
+  const dispatch = useDispatch()
+  const handleRemove=(item)=>{
+    dispatch(removeCollection(item.id))
+  }
   return (
     <div className="relative w-[23vw] h-80 bg-white rounded-xl overflow-hidden">
       <a href={item.url} target="_blank" className="h-full !z-3">
@@ -40,7 +45,7 @@ function CollectionCard({item}) {
           {item.title}
         </h2>
         <button className="bg-red-600 text-white rounded px-3 py-2 font-medium cursor-pointer active:scale-95 z-10" onClick={()=>{
-          console.log("removed")}}>
+          handleRemove(item)}}>
           Remove
         </button>
       </div>
